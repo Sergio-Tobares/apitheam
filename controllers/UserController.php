@@ -17,6 +17,7 @@ class UserController extends ActiveController{
         $actions = parent::actions();
         unset($actions['create']);
         unset($actions['update']);
+        unset($actions['delete']);
         return $actions;
         
     }
@@ -63,6 +64,20 @@ class UserController extends ActiveController{
         $model->save();
         
         return $model;
+    }
+    
+    
+    public function actionDelete($id){
+        
+        if (Yii::$app->user->identity->rol!='Admin') return "Only Admins can create new users";
+        
+        // buscamos el usuario y lo borramos
+        $model = User::findOne(['id'=>$id]);
+        if ($model) {
+            $model->delete();
+            return "The user id: ".$id.", has been deleted";
+        }
+        else return "User id: ".$id.", could not be found.";
     }
     
 }

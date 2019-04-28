@@ -18,6 +18,8 @@ use Yii;
  */
 class Customer extends \yii\db\ActiveRecord
 {
+    
+    public $file; // variable used to upload the picture
     /**
      * {@inheritdoc}
      */
@@ -37,6 +39,8 @@ class Customer extends \yii\db\ActiveRecord
             [['name'], 'string', 'max' => 50],
             [['surname'], 'string', 'max' => 100],
             [['photo'], 'string', 'max' => 250],
+            // for security reasons file will only acept jpg files
+            [['file'], 'file', 'extensions' => 'jpg', 'mimeTypes' => 'image/jpeg', 'maxFiles' => 1, 'skipOnEmpty' => true],
         ];
     }
 

@@ -19,6 +19,7 @@ $config = [
             'cookieValidationKey' => 'bhFHGxj24Ltkg_kCsd7xa8CuYvrtSo9g',
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
+                'multipart/form-data' => 'yii\web\MultipartFormDataParser'
             ]
             
         ],

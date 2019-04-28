@@ -1,4 +1,5 @@
 Authentication Method Bearer, Admin User Token: RNiyjIgSw7DPHv9a4wBkM45iWOfVeoul 
+i used bearer token authentication, the field in the database is the auth_key field
 
 List data
 http://apimonkeys.savocan.com/web/user
@@ -19,6 +20,9 @@ Data for create new customer:
 	"surname":"Surname for the client",
 	"photo":"Picture url"
 }
+And a "file" field encoded as multipart
+
+
 
 
 	"username":"Nuevousuario",

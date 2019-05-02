@@ -69,7 +69,7 @@ class UserController extends ActiveController{
     
     public function actionDelete($id){
         
-        if (Yii::$app->user->identity->rol!='Admin') return "Only Admins can create new users";
+        if (Yii::$app->user->identity->rol!='Admin') return "Only Admins can delete users";
         
         // buscamos el usuario y lo borramos
         $model = User::findOne(['id'=>$id]);
